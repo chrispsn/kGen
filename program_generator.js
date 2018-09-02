@@ -2,7 +2,7 @@
 const ok = require("./ok/ok.js")
 
 function test(input, output) {
-	try {
+    try {
         var got = ok.format(ok.run(ok.parse(input), ok.baseEnv()));
         // XXX allow programs that get *some* right or *approx* right, per STOKE?
 		return output === got;
