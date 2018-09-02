@@ -78,3 +78,17 @@ for (let [i, e] of Object.entries(examples)) {
         console.log("  " + prog);
     }
 }
+
+/* Sample output for first test:
+
++
+++
++:
+*+
+|+
+:+
+x+
+y+
+z+
+
+*/
