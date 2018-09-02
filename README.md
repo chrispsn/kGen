@@ -1,6 +1,6 @@
 # kGen
 
-Experimenting with code to generate and optimise APL/K code.
+Experimenting with code to generate and optimise K/APL code.
 
 Motivation: can programs generate:
 - simple K/APL programs, like those here? http://kparc.com/z/fun.k
@@ -12,7 +12,6 @@ Other resources to be fully grokked:
 
 - https://dyalog.tv/Dyalog17/?v=Wff2InJn3p0
 - https://github.com/e9gille/gpapl
-
 - STOKE http://stoke.stanford.edu/ (especially Stochastic Program Optimization)
 - Souper https://arxiv.org/abs/1711.04422
 
