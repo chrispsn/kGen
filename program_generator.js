@@ -5,8 +5,8 @@ function test(input, output) {
     try {
         var got = ok.format(ok.run(ok.parse(input), ok.baseEnv()));
         // XXX allow programs that get *some* right or *approx* right, per STOKE?
-		return output === got;
-	} catch(err) {
+        return output === got;
+    } catch(err) {
         return false
     };
 }
