@@ -1,3 +1,5 @@
+/ Using ngn/k
+
 / Generate programs
 elem: "+*,/\\|"                  / Minimum chars that don't segfault. Others: @$%!^#&.<>?'
 len: 2
@@ -5,15 +7,14 @@ idxs: + ! len # #elem
 progs: .' elem @ idxs
 
 / Test programs
-input: 1 2 3
-output: 6
-results: {1@x; output ~ (x input)}' progs
+t: +((1 2 3; 6); (1 2 3 4; 10))
+test: {1@x; t[1] ~ x'*t}
+results: test' progs
 
 / Show working programs
-1@"Worked:"
+-1@"Worked:"
 progs @ & results
 
 / TODO
 / progs of size *up to* len
-/ allow for several test cases
 / need something iterative beyond len ~6; perm counts are too big to generate eagerly
