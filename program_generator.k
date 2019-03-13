@@ -2,7 +2,7 @@
 exec: {`[,"/home/chris/k/k";x]}
 
 / Generate program strings
-elem: "!@#$%^&*()-_=+[]{};:'\",.<>/\\?|1234567890"
+elem: "!@#$%^&*()-_=+[]{};:'\",.<>/\\?|`1234567890"
 len: 2
 progs: elem @ + ! len # #elem
 
