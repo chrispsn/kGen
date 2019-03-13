@@ -1,18 +1,24 @@
-/ Using ngn/k
+/ ngn/k specific
+exec: {`[,"/home/chris/k/k";x]}
 
-/ Generate programs
-elem: "+*,/\\|"                  / Minimum chars that don't segfault. Others: @$%!^#&.<>?'
+/ Generate program strings
+elem: "+*,/\\|@$%!^#&<>?'."
 len: 2
-idxs: + ! len # #elem
-progs: .' elem @ idxs
+progs: elem @ + ! len # #elem
 
-/ Test programs
-t: +((1 2 3; 6); (1 2 3 4; 10))
-test: {1@x; t[1] ~ x'*t}
-results: test' progs
+/ Test data
+tests: +(("1 2 3";6);("1 2 3 4";10))
+input: tests[0]
+expect: {($x),"\n"}'tests[1]
+
+/ Run tests
+testprog: {
+    / 1 x,"\n" / debug - print program before running on input
+    expect ~ exec' x {x,y,"\n"}/: input}
+results: testprog'progs
 
 / Show working programs
--1@"Worked:"
+"Worked:"
 progs @ & results
 
 / TODO
