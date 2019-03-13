@@ -2,18 +2,19 @@
 exec: {`[,"/home/chris/k/k";x]}
 
 / Generate program strings
-elem: "+*,/\\|@$%!^#&<>?'."
+elem: "!@#$%^&*()-_=+[]{};:'\",.<>/\\?|"
 len: 2
 progs: elem @ + ! len # #elem
 
 / Test data
-tests: +(("1 2 3";6);("1 2 3 4";10))
+/ TODO make the input not a string
+tests: +(("1 2 3";6); ("1 2 3 4";10))
 input: tests[0]
 expect: {($x),"\n"}'tests[1]
 
 / Run tests
 testprog: {
-    / 1 x,"\n" / debug - print program before running on input
+    1 x,"\n" / debug
     expect ~ exec' x {x,y,"\n"}/: input}
 results: testprog'progs
 
